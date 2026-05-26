@@ -1,0 +1,366 @@
+@font-face {
+    font-family: 'cairo';
+    src: url('/assets/go_frappe_themez/fonts/Cairo-Regular.ttf');
+}
+:root {
+    --text-base: 13px !important;
+}
+/* ==========================================================================
+   CSS CUSTOM VARIABLE OVERRIDES - LIGHT & DARK THEMES
+   ========================================================================== */
+
+:root,
+[data-theme="light"] {
+    /* Brand Logo Color Stops */
+    --logo-deep-navy: #06076e;
+    --logo-royal-cobalt: #004ea8;
+    --logo-electric-blue: #0082fb;
+    --logo-sky-cyan: #00d4ff;
+
+    /* Primary / Accent Colors */
+    --primary: var(--logo-royal-cobalt);
+    --primary-color: var(--logo-royal-cobalt);
+    --brand-color: var(--logo-deep-navy);
+    --primary-light: #e6f2ff; /* Soft sky-blue tint from the logo top */
+    --primary-dark: var(--logo-deep-navy);
+    
+    /* Layout / Surface Colors */
+    --bg-color: #f8fafc;
+    --fg-color: #ffffff;
+    --card-bg: #ffffff;
+    --navbar-bg: rgba(255, 255, 255, 0.75);
+    --modal-bg: #ffffff;
+    --popover-bg: #ffffff;
+    
+    /* Subtle / Hover Surface Colors */
+    --subtle-accent: #f1f5f9;
+    --subtle-fg: #f8fafc;
+    --fg-hover-color: #f1f5f9;
+    --control-bg: #f1f5f9;
+    --disabled-control-bg: #f8fafc;
+    
+    /* Borders & Outlines */
+    --border-color: #e2e8f0;
+    --dark-border-color: #cbd5e1;
+    --table-border-color: #f1f5f9;
+    --border-primary: #cbd5e1;
+    
+    /* Text / Contrast Colors */
+    --text-color: #1e293b;
+    --text-muted: #64748b;
+    
+    /* Shadows */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    
+    --card-shadow: var(--shadow-sm);
+    --modal-shadow: var(--shadow-lg);
+    --btn-shadow: var(--shadow-xs);
+    
+    /* Border Radii */
+    --border-radius: 12px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 16px;
+    
+    /* Typography */
+    --font-family-sans-serif: 'cairo','Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-stack: var(--font-family-sans-serif);
+}
+
+[data-theme="dark"] {
+    /* Primary / Accent Colors */
+    --primary: #38b6ff; /* Vibrant sky/electric blue from the logo top */
+    --primary-color: #38b6ff;
+    --brand-color: #38b6ff;
+    --primary-light: rgba(56, 182, 255, 0.15); /* Translucent electric glow accent highlight */
+    --primary-dark: #004ea8;
+    
+    /* Layout / Surface Colors */
+    --bg-color: #0f172a;
+    --fg-color: #1e293b;
+    --card-bg: #1e293b;
+    --navbar-bg: rgba(15, 23, 42, 0.8);
+    --modal-bg: #1e293b;
+    --popover-bg: #1e293b;
+    
+    /* Subtle / Hover Surface Colors */
+    --subtle-accent: #334155;
+    --subtle-fg: #1e293b;
+    --fg-hover-color: #334155;
+    --control-bg: #334155;
+    --disabled-control-bg: #0f172a;
+    
+    /* Borders & Outlines */
+    --border-color: #334155;
+    --dark-border-color: #475569;
+    --table-border-color: #1e293b;
+    --border-primary: #475569;
+    
+    /* Text / Contrast Colors */
+    --text-color: #f1f5f9;
+    --text-muted: #94a3b8;
+    
+    /* Shadows */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+    
+    --card-shadow: var(--shadow-sm);
+    --modal-shadow: var(--shadow-lg);
+    --btn-shadow: var(--shadow-xs);
+}
+
+/* Apply main typography */
+body, html, input, button, select, textarea, .frappe-control, .desk-sidebar, .page-title, .title-text {
+    font-family: var(--font-family-sans-serif) !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   GLASSMORPHISM NAVBAR & DESK COMPONENT TWEAKS
+   ========================================================================== */
+
+/* Navbar Glassmorphism */
+.navbar {
+    background-color: var(--navbar-bg) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border-color) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03) !important;
+    padding: 0 20px !important;
+    transition: all 0.3s ease;
+}
+
+/* Navbar search button and menus */
+.navbar .search-bar input {
+    border-radius: var(--border-radius-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    background-color: var(--subtle-accent) !important;
+    transition: all 0.2s ease !important;
+}
+
+.navbar .search-bar input:focus {
+    border-color: var(--primary) !important;
+    background-color: var(--fg-color) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Sidebar Modern Glass-Card Layout */
+.layout-side-section {
+    margin: 5px !important;
+    padding: 12px !important;
+    border-radius: var(--border-radius-lg) !important;
+    background-color: var(--fg-color) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--card-shadow) !important;
+    height: calc(100vh - 100px) !important;
+    overflow-y: auto !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Modern navigation items inside sidebar */
+.desk-sidebar .sidebar-item {
+    border-radius: var(--border-radius-sm) !important;
+    margin-bottom: 4px !important;
+    padding: 8px 12px !important;
+    font-weight: 400 !important;
+    color: var(--text-muted) !important;
+    transition: all 0.2s ease !important;
+}
+
+.desk-sidebar .sidebar-item:not(.divider):not(.spacer):not(.sidebar-group-title):hover {
+    background-color: var(--fg-hover-color) !important;
+    color: var(--text-color) !important;
+    transform: translateX(3px);
+}
+
+.desk-sidebar .sidebar-item.active {
+    background-color: var(--primary-light) !important;
+    color: var(--primary) !important;
+    font-weight: 500 !important;
+}
+
+[data-theme="dark"] .desk-sidebar .sidebar-item.active {
+    background-color: rgba(129, 140, 248, 0.15) !important;
+    color: var(--primary) !important;
+}
+
+/* Disable hover effects and transitions for dividers, spacers, and group headers in the sidebar */
+.spacer:hover {
+    background-color: transparent !important;
+    color: inherit !important;
+    transform: none !important;
+    cursor: default !important;
+    box-shadow: none !important;
+}
+
+/* Body Background and Content Area styling */
+body {
+    background-color: var(--bg-color) !important;
+}
+
+.layout-main-section-wrapper {
+    background-color: transparent !important;
+}
+
+.layout-main-section {
+    background-color: var(--fg-color) !important;
+    border-radius: var(--border-radius-lg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-sm) !important;
+    margin: 5px !important;
+    padding: 6px !important;
+    transition: all 0.3s ease;
+}
+
+/* Standard Filters block styling */
+.standard-filter-section {
+    background-color: var(--subtle-accent) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius) !important;
+    padding: 12px 16px !important;
+    margin-bottom: 20px !important;
+}
+
+/* Form and Fields Modern styling */
+.form-control, input[type="text"], input[type="password"], select, textarea {
+    border-radius: var(--border-radius-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    background-color: var(--control-bg) !important;
+    color: var(--text-color) !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.form-control:focus, input[type="text"]:focus, select:focus, textarea:focus {
+    border-color: var(--primary) !important;
+    background-color: var(--fg-color) !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+    outline: none !important;
+}
+
+/* Elegant Buttons styling */
+.btn {
+    border-radius: var(--border-radius-sm) !important;
+    font-weight: 500 !important;
+    padding: 6px 16px !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.btn:active, .btn:focus {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 4px rgba(99, 102, 241, 0.2) !important;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3) !important;
+}
+
+.btn-default {
+    background-color: var(--fg-color) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+.btn-default:hover {
+    background-color: var(--subtle-accent) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+/* Page Headers styling */
+.page-head {
+    border-bottom: 1px solid var(--border-color) !important;
+    background-color: var(--fg-color) !important;
+    
+}
+
+.page-title h1, .title-text {
+    font-weight: 700 !important;
+    color: var(--text-color) !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* Desk Widgets (Dashboard/Home Cards) */
+.widget {
+    background-color: var(--fg-color) !important;
+    border-radius: var(--border-radius) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--card-shadow) !important;
+    padding: 20px !important;
+    margin-bottom: 16px !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.widget:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-md) !important;
+    border-color: var(--dark-border-color) !important;
+}
+
+.widget-title {
+    font-weight: 600 !important;
+    color: var(--text-color) !important;
+}
+
+/* Premium Dialog Modals styling */
+.modal-content {
+    border-radius: var(--border-radius-lg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--modal-shadow) !important;
+    background-color: var(--modal-bg) !important;
+    overflow: hidden !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid var(--border-color) !important;
+    background-color: var(--subtle-fg) !important;
+    padding: 16px 24px !important;
+}
+
+.modal-body {
+    padding: 24px !important;
+}
+
+.modal-footer {
+    border-top: 1px solid var(--border-color) !important;
+    background-color: var(--subtle-fg) !important;
+    padding: 16px 24px !important;
+}
+
+.modal-backdrop.show {
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    opacity: 0.4 !important;
+    background-color: #0f172a !important;
+}
+
+/* Slim Premium Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-border-color);
+}

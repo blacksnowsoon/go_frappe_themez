@@ -25,7 +25,7 @@ app_license = "mit"
 # ------------------
 
 # include js, css files in header of desk.html
-# app_include_css = "/assets/go_frappe_themez/css/go_frappe_themez.css"
+app_include_css = "/assets/go_frappe_themez/css/desk_theme.css"
 # app_include_js = "/assets/go_frappe_themez/js/go_frappe_themez.js"
 
 # include js, css files in header of web template
