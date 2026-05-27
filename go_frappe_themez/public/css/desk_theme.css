@@ -364,3 +364,21 @@ body {
 ::-webkit-scrollbar-thumb:hover {
     background: var(--dark-border-color);
 }
+.kanban {
+    scrollbar-width:thin !important;
+    scrollbar-color:var(--border-color) transparent !important;
+}
+.kanban::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+.kanban::-webkit-scrollbar-track {
+    background: transparent;
+}
+.kanban::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+.kanban::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-border-color);
+}
