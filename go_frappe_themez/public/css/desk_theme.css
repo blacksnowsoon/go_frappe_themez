@@ -235,7 +235,9 @@ body {
     color: var(--text-color) !important;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
-
+.frappe-control .link-btn {
+    background-color: none !important;
+}
 .form-control:focus, input[type="text"]:focus, select:focus, textarea:focus {
     border-color: var(--primary) !important;
     background-color: var(--fg-color) !important;
