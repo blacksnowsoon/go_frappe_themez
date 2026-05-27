@@ -29,7 +29,7 @@ app_include_css = "/assets/go_frappe_themez/css/desk_theme.css"
 # app_include_js = "/assets/go_frappe_themez/js/go_frappe_themez.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/go_frappe_themez/css/go_frappe_themez.css"
+web_include_css = "/assets/go_frappe_themez/css/login_style.css"
 # web_include_js = "/assets/go_frappe_themez/js/go_frappe_themez.js"
 
 # include custom scss in every website theme (without file extension ".scss")

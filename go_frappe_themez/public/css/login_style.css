@@ -1,0 +1,149 @@
+/* ==========================================================================
+   LOGIN PAGE MODERN STYLING - MATCHING DESK THEME
+   ========================================================================== */
+
+:root {
+    --primary: #004ea8;
+    --primary-dark: #06076e;
+    --text-color: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    --control-bg: #f1f5f9;
+    --fg-color: #ffffff;
+    --border-radius-sm: 8px;
+    --font-family-sans-serif: 'cairo', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Input field wrapper with icon - fix placeholder overflow */
+.frappe-control.input-with-feedback {
+    position: relative;
+}
+
+.frappe-control input[type="text"],
+.frappe-control input[type="password"],
+input[type="text"],
+input[type="password"] {
+    padding-right: 36px !important;
+    padding-left: 12px !important;
+}
+
+/* Username and password input fields */
+#login_email,
+#login_password {
+    width: 100% !important;
+    padding: 10px 36px 10px 12px !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--border-radius-sm) !important;
+    background-color: var(--control-bg) !important;
+    color: var(--text-color) !important;
+    font-size: 14px !important;
+    font-family: var(--font-family-sans-serif) !important;
+    transition: all 0.2s ease !important;
+    box-sizing: border-box !important;
+}
+
+#login_email:focus,
+#login_password:focus {
+    border-color: var(--primary) !important;
+    background-color: var(--fg-color) !important;
+    box-shadow: 0 0 0 3px rgba(0, 78, 168, 0.1) !important;
+    outline: none !important;
+}
+
+#login_email::placeholder,
+#login_password::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Icon positioning inside input */
+.frappe-control .input-with-feedback .input-icon,
+.input-icon,
+.fa-user,
+.fa-lock {
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    color: var(--text-muted) !important;
+    pointer-events: none !important;
+    font-size: 14px !important;
+}
+
+/* Login form button styling */
+#login_btn {
+    width: 100% !important;
+    padding: 10px 20px !important;
+    background-color: var(--primary) !important;
+    border: 1px solid var(--primary) !important;
+    border-radius: var(--border-radius-sm) !important;
+    color: #ffffff !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    font-family: var(--font-family-sans-serif) !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 2px 4px rgba(0, 78, 168, 0.15) !important;
+}
+
+#login_btn:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 4px 12px rgba(0, 78, 168, 0.25) !important;
+    transform: translateY(-1px) !important;
+}
+
+#login_btn:active {
+    transform: scale(0.98) !important;
+}
+
+/* Checkbox styling */
+.form-group input[type="checkbox"],
+#remember_me {
+    width: 16px !important;
+    height: 16px !important;
+    cursor: pointer !important;
+    accent-color: var(--primary) !important;
+}
+
+.form-group label.checkbox {
+    display: flex !important;
+    align-items: center !important;
+    font-size: 13px !important;
+    color: var(--text-color) !important;
+    margin-bottom: 16px !important;
+}
+
+.form-group label.checkbox input {
+    margin-right: 8px !important;
+}
+
+/* Error messages */
+.alert {
+    border-radius: var(--border-radius-sm) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 12px 14px !important;
+    margin-bottom: 16px !important;
+    font-size: 13px !important;
+}
+
+.alert-danger {
+    background-color: rgba(239, 68, 68, 0.1) !important;
+    border-color: rgba(239, 68, 68, 0.3) !important;
+    color: #dc2626 !important;
+}
+
+/* Footer links styling */
+.form-footer a,
+.login-footer a {
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    transition: color 0.2s ease !important;
+}
+
+.form-footer a:hover,
+.login-footer a:hover {
+    color: var(--primary-dark) !important;
+    text-decoration: underline !important;
+}
