@@ -384,3 +384,26 @@ body {
 .kanban::-webkit-scrollbar-thumb:hover {
     background: var(--dark-border-color);
 }
+
+.indicator-pill[data-filter="task_type,=,Bug"], 
+.indicator-pill[data-filter="priority,=,High"], 
+.indicator-pill[data-filter="procedure,=,Check-In"] {
+  background-color: rgba(255, 0, 0, 0.415);
+}
+.indicator-pill[data-filter="priority,=,Medium"] {
+  background-color: rgba(255, 255, 0, 0.415);
+}
+.indicator-pill[data-filter="task_type,=,New Request"], 
+.indicator-pill[data-filter="priority,=,Low"], 
+.indicator-pill[data-filter="priority,=,Normal"] {
+  background-color: rgba(0, 255, 220, 0.415);
+}
+.indicator-pill[data-filter="task_type,=,Query"], 
+.indicator-pill[data-filter="procedure,=,Check-Out"] {
+  background-color: rgba(40, 255, 0, 0.415);
+}
+.tag-pill {
+  font-size: 0.7em;
+  max-width:50px;
+  max-height: 20px;
+}
