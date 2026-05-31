@@ -194,11 +194,6 @@ body, html, input, button, select, textarea, .frappe-control, .desk-sidebar, .pa
 .spacer{
     border-bottom: 1px solid var(--border-color);
     border-radius: 0 !important;
-    /* background-color: transparent !important;
-    color: inherit !important;
-    transform: none !important;
-    cursor: default !important;
-    box-shadow: none !important; */
 }
 
 /* Body Background and Content Area styling */
@@ -387,7 +382,7 @@ body {
     background: var(--dark-border-color);
 }
 
-.indicator-pill[data-filter="task_type,=,Bug"], 
+.indicator-pill[data-filter="status,=,Backlog"], 
 .indicator-pill[data-filter="priority,=,High"], 
 .indicator-pill[data-filter="procedure,=,Check-In"] {
   background-color: rgba(255, 0, 0, 0.415);
@@ -395,12 +390,12 @@ body {
 .indicator-pill[data-filter="priority,=,Medium"] {
   background-color: rgba(255, 255, 0, 0.415);
 }
-.indicator-pill[data-filter="task_type,=,New Request"], 
+.indicator-pill[data-filter="status,=,Under Technical Review"], 
 .indicator-pill[data-filter="priority,=,Low"], 
 .indicator-pill[data-filter="priority,=,Normal"] {
   background-color: rgba(0, 255, 220, 0.415);
 }
-.indicator-pill[data-filter="task_type,=,Query"], 
+.indicator-pill[data-filter="status,=,In Progress"], 
 .indicator-pill[data-filter="procedure,=,Check-Out"] {
   background-color: rgba(40, 255, 0, 0.415);
 }
