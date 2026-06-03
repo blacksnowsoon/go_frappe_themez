@@ -382,19 +382,23 @@ body {
     background: var(--dark-border-color);
 }
 
+.indicator-pill[data-filter="task_type,=,Bug"],
 .indicator-pill[data-filter="status,=,Backlog"], 
 .indicator-pill[data-filter="priority,=,High"], 
 .indicator-pill[data-filter="procedure,=,Check-In"] {
   background-color: rgba(255, 0, 0, 0.415);
 }
+.indicator-pill[data-filter="task_type,=,New Request"],
 .indicator-pill[data-filter="priority,=,Medium"] {
   background-color: rgba(255, 255, 0, 0.415);
 }
+
 .indicator-pill[data-filter="status,=,Under Technical Review"], 
 .indicator-pill[data-filter="priority,=,Low"], 
 .indicator-pill[data-filter="priority,=,Normal"] {
   background-color: rgba(0, 255, 220, 0.415);
 }
+.indicator-pill[data-filter="task_type,=,Query"],
 .indicator-pill[data-filter="status,=,In Progress"], 
 .indicator-pill[data-filter="procedure,=,Check-Out"] {
   background-color: rgba(40, 255, 0, 0.415);
@@ -403,4 +407,14 @@ body {
   font-size: 0.7em;
   max-width:50px;
   max-height: 20px;
+}
+
+/* chart style */
+.legend-dataset-label {
+  font-size: 12px;
+  font-family: 'cairo', sans-serif;
+}
+.widget.dashboard-widget-box {
+  min-width: 180px;
+  box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.75);
 }
